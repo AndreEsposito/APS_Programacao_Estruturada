@@ -63,23 +63,23 @@ while True:
         escolha = int(input("Digite o número da opção desejada: "))
         if type(escolha) != int:
             raise ValueError
-
-        if escolha == 1:
-            frase = str(input("Digite uma frase para criptografar: "))
-            chave = int(input("Digite a chave de criptografia (um número inteiro): "))
-            frase_criptografada = encriptacao_descriptacao(frase, chave)
-            print("Frase criptografada:", frase_criptografada)
-        elif escolha == 2:
-            frase = str(input("Digite uma frase para descriptografar: "))
-            chave = int(input("Digite a chave de descriptografia (um número inteiro): "))
-            frase_descriptografada = encriptacao_descriptacao(frase, -chave)
-            print("Frase descriptografada:", frase_descriptografada)
-        elif escolha == 3:
-            print("Saindo do programa...")
-            sleep(1.5)
-            print("Até logo")
-            break
         else:
-            print("Opção inválida! Por favor, escolha as opções 1, 2 ou 3.")
+            if escolha == 1:
+                frase = str(input("Digite uma frase para criptografar: "))
+                chave = int(input("Digite a chave de criptografia (um número inteiro): "))
+                frase_criptografada = encriptacao_descriptacao(frase, chave)
+                print("Frase criptografada:", frase_criptografada)
+            elif escolha == 2:
+                frase = str(input("Digite uma frase para descriptografar: "))
+                chave = int(input("Digite a chave de descriptografia (um número inteiro): "))
+                frase_descriptografada = encriptacao_descriptacao(frase, -chave)
+                print("Frase descriptografada:", frase_descriptografada)
+            elif escolha == 3:
+                print("Saindo do programa...")
+                sleep(1.5)
+                print("Até logo")
+                break
+            else:
+                print("Opção inválida! Por favor, escolha as opções 1, 2 ou 3.")
     except ValueError as e:
         print(f"Erro: {e}. Por favor, digite um número válido entre as opções apresentadas!")
